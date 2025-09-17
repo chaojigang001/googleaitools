@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="zh">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>岐黄之思 - Inner Canon AI</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;700&family=Noto+Serif:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <style>
+      html {
+        font-size: 18px; /* Increase base font size for the entire app */
+      }
+      body {
+        font-family: 'Noto Serif', 'Noto Serif SC', serif;
+      }
+      .font-fangsong {
+        font-family: FangSong, "STFangsong", "华文仿宋", serif;
+        color: #3E6457; /* Darker, more readable shade of green */
+        font-size: 1.2rem; /* Make original text stand out */
+        line-height: 1.8;
+      }
+      /* Loading animation for AI response */
+      .dot-flashing {
+        position: relative;
+        width: 10px;
+        height: 10px;
+        border-radius: 5px;
+        background-color: #5B8E7D;
+        color: #5B8E7D;
+        animation: dot-flashing 1s infinite linear alternate;
+        animation-delay: .5s;
+        margin: 10px 0;
+      }
+      .dot-flashing::before, .dot-flashing::after {
+        content: '';
+        display: inline-block;
+        position: absolute;
+        top: 0;
+      }
+      .dot-flashing::before {
+        left: -15px;
+        width: 10px;
+        height: 10px;
+        border-radius: 5px;
+        background-color: #5B8E7D;
+        color: #5B8E7D;
+        animation: dot-flashing 1s infinite alternate;
+        animation-delay: 0s;
+      }
+      .dot-flashing::after {
+        left: 15px;
+        width: 10px;
+        height: 10px;
+        border-radius: 5px;
+        background-color: #5B8E7D;
+        color: #5B8E7D;
+        animation: dot-flashing 1s infinite alternate;
+        animation-delay: 1s;
+      }
+      @keyframes dot-flashing {
+        0% {
+          background-color: #5B8E7D;
+        }
+        50%, 100% {
+          background-color: rgba(91, 142, 125, 0.2);
+        }
+      }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "react/": "https://esm.sh/react@^19.1.1/",
+    "react": "https://esm.sh/react@^19.1.1",
+    "react-dom/": "https://esm.sh/react-dom@^19.1.1/",
+    "@google/genai": "https://esm.sh/@google/genai@^1.13.0",
+    "react-markdown": "https://esm.sh/react-markdown@^10.1.0",
+    "rehype-raw": "https://esm.sh/rehype-raw@^7.0.0"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
+</head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/index.tsx"></script>
+  </body>
+</html>
